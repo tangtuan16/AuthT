@@ -1,5 +1,6 @@
 package com.example.Auth.Services;
 
+import com.example.Auth.Models.CustomUserDetails;
 import com.example.Auth.Models.Role;
 import com.example.Auth.Models.User;
 import com.example.Auth.Repositories.UserRepository;
@@ -20,14 +21,9 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        return org.springframework.security.core.userdetails.User
-                .withUsername(user.getUsername())
-                .password(user.getPassword())
-                .authorities(user.getRoles().stream()
-                        .map(Role::getName)
-                        .toArray(String[]::new))
-                .build();
+        return new CustomUserDetails(user);
     }
+
 }
 
 

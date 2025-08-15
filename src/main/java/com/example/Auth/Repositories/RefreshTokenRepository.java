@@ -2,16 +2,19 @@ package com.example.Auth.Repositories;
 
 import com.example.Auth.Models.RefreshToken;
 import com.example.Auth.Models.User;
-import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {
-    Optional<RefreshToken> findByToken(String token);
+    Optional<RefreshToken> findByTokenHash(String tokenHash);
 
-    @Modifying
-    @Transactional
+    Optional<RefreshToken> findByJti(String jti);
+
+    List<RefreshToken> findAllByUser(User user);
+
     void deleteByUser(User user);
 }

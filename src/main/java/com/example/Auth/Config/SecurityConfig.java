@@ -2,7 +2,7 @@ package com.example.Auth.Config;
 
 import com.example.Auth.Services.CustomOAuth2UserService;
 import com.example.Auth.Services.CustomUserDetailsService;
-import com.example.Auth.Utils.JwtAuthenticationFilter;
+import com.example.Auth.Services.Jwts.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

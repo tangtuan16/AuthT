@@ -1,10 +1,13 @@
 package com.example.Auth.DTO;
 
+import com.example.Auth.Models.Role;
 import com.example.Auth.Models.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -16,11 +19,12 @@ public class UserRegisterDTO {
     private String email;
     private String roles;
 
-    private UserRegisterDTO maptoDTO(User user) {
-        UserRegisterDTO userRegisterDTO = new UserRegisterDTO();
-        userRegisterDTO.setUsername(user.getUsername());
-        userRegisterDTO.setEmail(user.getEmail());
-        userRegisterDTO.setRoles(this.roles);
-        return userRegisterDTO;
+    public static UserRegisterDTO maptoDTO(User user) {
+        UserRegisterDTO dto = new UserRegisterDTO();
+        dto.setUsername(user.getUsername());
+        dto.setEmail(user.getEmail());
+        dto.setRoles(user.getRoles().toString());
+        return dto;
     }
+
 }

@@ -35,6 +35,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
     implementation ("io.github.cdimascio:java-dotenv:5.2.2")
+    implementation("org.springframework.boot:spring-boot-starter-mail")
 
 
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
