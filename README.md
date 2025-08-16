@@ -38,6 +38,8 @@ src/main/java
 
 ├─ dto # Data Transfer Objects
 
+├─ exceptions # Handle exceptionsexceptions
+
 └─ config # Security, OAuth2, Dotenv, Mail
 
 ---
