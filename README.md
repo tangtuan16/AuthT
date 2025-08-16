@@ -164,8 +164,8 @@ Sử dụng JavaMailSender để gửi mail xác thực.
 java
 @Value("${MAIL_FROM}")
 private String fromEmail;
-Secrets & Security
-Không commit trực tiếp secrets lên GitHub.
+
+#Secrets & Security
 
 Lưu tất cả các secret (DB, JWT, Mail, Google OAuth) trong .env
 
