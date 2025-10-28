@@ -69,7 +69,7 @@ src/
 
 ---
 
-## 🧪 Hướng dẫn test bằng Postman  
+## Hướng dẫn test bằng Postman  
 
 ### Login  
 **POST** `/api/auth/login`  
